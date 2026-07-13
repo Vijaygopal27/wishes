@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All the Best, Dhaya! 🎉</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:linear-gradient(-45deg,#4facfe,#00f2fe,#667eea,#764ba2);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    width:90%;
+    max-width:700px;
+    padding:50px;
+    text-align:center;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    color:#fff;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+    animation:pop 1s ease;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+h1{
+    font-size:48px;
+    margin-bottom:15px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px rgba(255,255,255,.3);}
+    to{text-shadow:0 0 30px rgba(255,255,255,1);}
+}
+
+h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.8;
+    opacity:0;
+    animation:fadeUp 1.5s forwards;
+    animation-delay:.8s;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.footer{
+    margin-top:35px;
+    font-size:18px;
+    opacity:.9;
+}
+
+.confetti{
+    position:absolute;
+    width:10px;
+    height:20px;
+    top:-20px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+.star{
+    position:absolute;
+    color:white;
+    font-size:22px;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+@media(max-width:600px){
+h1{
+font-size:34px;
+}
+h2{
+font-size:24px;
+}
+p{
+font-size:17px;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🎉 Congratulations! 🎉</h1>
+
+    <h2>All the Best, Dhaya! 🚀</h2>
+
+    <p>
+        Wishing you endless success, exciting opportunities,
+        and an amazing journey in your new company.
+        <br><br>
+        May every challenge make you stronger,
+        every achievement make you prouder,
+        and every day bring you closer to your dreams.
+        <br><br>
+        <strong>Good luck on your new adventure!</strong> 🌟
+    </p>
+
+    <div class="footer">
+        💙 We'll miss you. Keep shining and make us proud! 💙
+    </div>
+</div>
+
+<script>
+
+// Confetti
+const colors=["#ff4d4d","#ffd93d","#6bcB77","#4d96ff","#ffffff","#ff66c4"];
+
+for(let i=0;i<150;i++){
+
+let c=document.createElement("div");
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+c.style.background=colors[Math.floor(Math.random()*colors.length)];
+c.style.animationDuration=(3+Math.random()*5)+"s";
+c.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(c);
+
+}
+
+// Floating Stars
+
+for(let i=0;i<25;i++){
+
+let s=document.createElement("div");
+s.className="star";
+s.innerHTML="✨";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDelay=Math.random()*4+"s";
+
+document.body.appendChild(s);
+
+}
+
+</script>
+
+</body>
+</html>
